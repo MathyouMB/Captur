@@ -117,6 +117,12 @@ defmodule Captur.Games do
     Repo.all(Game)
   end
 
+  def list_games_by_user(user_id) do
+    Game 
+    |> where(user_id: ^user_id) 
+    |> Repo.all()
+  end
+
   @doc """
   Gets a single game.
 

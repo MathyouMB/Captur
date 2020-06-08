@@ -6,6 +6,11 @@ defmodule CapturWeb.GameController do
 
   action_fallback CapturWeb.FallbackController
 
+  def index(conn, %{"user_id" => user_id}) do
+    games = Games.list_games_by_user(user_id)
+    render(conn, "index.json", games: games)
+  end
+
   def index(conn, _params) do
     games = Games.list_games()
     render(conn, "index.json", games: games)
