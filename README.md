@@ -13,5 +13,11 @@ To start your Phoenix server:
 
   *  https://pspdfkit.com/blog/2018/how-to-run-your-phoenix-application-with-docker/
   *  https://lobotuerto.com/blog/building-a-json-api-in-elixir-with-phoenix/
+  *  https://www.youtube.com/watch?v=THUG8J3xSYw
+
+# Commands
+  
+  * mix phx.gen.json Games User users username:string email:string password:string
+  * mix phx.gen.json Games Game games title:string description:text start_date:datetime end_date:datetime hidden:boolean user_id:references:users
 
 
