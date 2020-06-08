@@ -1,0 +1,2 @@
+*dockerfile linguist-language=Dockerfile
+*docker-compsoe.yml linguist-language=Dockerfile
