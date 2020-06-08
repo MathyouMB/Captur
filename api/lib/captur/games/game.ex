@@ -10,7 +10,6 @@ defmodule Captur.Games.Game do
     field :hidden, :boolean, default: false
     field :start_date, :naive_datetime
     field :title, :string
-    #field :user_id, :binary_id
     belongs_to :user, Captur.Games.User
     timestamps()
   end

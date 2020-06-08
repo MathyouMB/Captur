@@ -16,6 +16,7 @@ defmodule CapturWeb.GameView do
       description: game.description,
       start_date: game.start_date,
       end_date: game.end_date,
-      hidden: game.hidden}
+      hidden: game.hidden,
+      user_id: game.user_id}
   end
 end
