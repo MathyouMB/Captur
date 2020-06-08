@@ -4,8 +4,8 @@ A platform for hosting challenge based contests such as capture the flag events.
 
 # Articles
 
-https://pspdfkit.com/blog/2018/how-to-run-your-phoenix-application-with-docker/
-https://lobotuerto.com/blog/building-a-json-api-in-elixir-with-phoenix/
+  *  https://pspdfkit.com/blog/2018/how-to-run-your-phoenix-application-with-docker/
+  *  https://lobotuerto.com/blog/building-a-json-api-in-elixir-with-phoenix/
 
 To start your Phoenix server:
 
