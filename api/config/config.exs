@@ -8,13 +8,14 @@
 use Mix.Config
 
 config :captur,
-  ecto_repos: [Captur.Repo]
+  ecto_repos: [Captur.Repo],
+  generators: [binary_id: true]
 
 # Configures the endpoint
 config :captur, CapturWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "+2TKCCvXmsGS7L7I1XZADYd+P71Ab7+nwLywRcGAVgmDZjCvb9qxpewgSHkm6m6E",
-  render_errors: [view: CapturWeb.ErrorView, accepts: ~w(html json)],
+  secret_key_base: "OlRfkZZMIAzC4JIClhjKL5p7IvTvaxAXVm/qDIv9NVjN8TdnzxIskOxoF1LElbMi",
+  render_errors: [view: CapturWeb.ErrorView, accepts: ~w(json)],
   pubsub: [name: Captur.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
