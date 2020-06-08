@@ -2,6 +2,8 @@
 
 A platform for hosting challenge based contests such as capture the flag events.
 
+https://pspdfkit.com/blog/2018/how-to-run-your-phoenix-application-with-docker/
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
