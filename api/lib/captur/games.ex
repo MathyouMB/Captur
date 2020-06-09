@@ -7,6 +7,7 @@ defmodule Captur.Games do
   alias Captur.Repo
 
   alias Captur.Games.User
+  alias Captur.Games.Participant
 
   @doc """
   Returns the list of users.
@@ -19,12 +20,6 @@ defmodule Captur.Games do
   """
   def list_users do
     Repo.all(User)
-  end
-
-  def list_user_games(user_id) do
-    User
-    |> where(user_id: ^user_id) 
-    |>Repo.all()
   end
 
   @doc """
@@ -41,7 +36,7 @@ defmodule Captur.Games do
       ** (Ecto.NoResultsError)
 
   """
-  def get_user!(id), do: Repo.get!(User, id)
+  def get_user!(id), do: Repo.get!(User, id) |> Repo.preload(:games)
 
   @doc """
   Creates a user.
@@ -129,6 +124,32 @@ defmodule Captur.Games do
     |> Repo.all()
   end
 
+  def list_user_games(user_id) do
+    
+
+      #select game_id
+      #from participants 
+      #left join games on participants.game_id = games.id
+      #where participants.user_id = '2'
+      
+      # Create a query
+      #query = from p in Participant,
+      #          join: g in Game, on: g.id == p.game_id
+
+      # Extend the query
+      #query = from [p, g] in query,
+      #          where: [user_id: ^user_id],
+      #          select: {g.id, g.title}
+    #Participant
+    #|> join(:left, [p], g in assoc(g, :games))
+    #|> select([p, g], {p, g})
+     Game 
+    |> where(user_id: ^user_id) 
+    |> Repo.all()
+
+    #Repo.all(query)
+  end
+
   @doc """
   Gets a single game.
 
@@ -210,7 +231,7 @@ defmodule Captur.Games do
     Game.changeset(game, %{})
   end
 
-  alias Captur.Games.Participant
+  
 
   @doc """
   Returns the list of participants.

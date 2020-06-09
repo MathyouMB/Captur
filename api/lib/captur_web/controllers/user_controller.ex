@@ -22,6 +22,8 @@ defmodule CapturWeb.UserController do
 
   def show(conn, %{"id" => id}) do
     user = Games.get_user!(id)
+    #IO.inspect(user)
+    IO.inspect(user.games)
     render(conn, "show.json", user: user)
   end
 

@@ -8,8 +8,11 @@ defmodule Captur.Games.User do
     field :email, :string
     field :password, :string
     field :username, :string
-    has_many :games, Captur.Games.Game
+    #has_many :games, Captur.Games.Game
+    #has_many :participants, Captur.Games.Participant
     has_many :participants, Captur.Games.Participant
+    has_many :games,
+      through: [:participants, :game]
     timestamps()
   end
 

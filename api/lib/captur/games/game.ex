@@ -12,6 +12,9 @@ defmodule Captur.Games.Game do
     field :title, :string
     belongs_to :user, Captur.Games.User
     has_many :participants, Captur.Games.Participant
+    has_many :users,
+      through: [:participants, :user]
+    #many_to_many :users, Capter.Games.User, join_through: "participants"
     timestamps()
   end
 
