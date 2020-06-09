@@ -11,6 +11,7 @@ defmodule Captur.Games.Game do
     field :start_date, :naive_datetime
     field :title, :string
     belongs_to :user, Captur.Games.User
+    has_many :participants, Captur.Games.Participant
     timestamps()
   end
 

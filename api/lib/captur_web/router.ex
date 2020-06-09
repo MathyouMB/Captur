@@ -9,5 +9,6 @@ defmodule CapturWeb.Router do
     pipe_through :api
     resources "/users", UserController
     resources "/games", GameController
+    resources "/participants", ParticipantController
   end
 end
