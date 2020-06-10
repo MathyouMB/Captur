@@ -11,4 +11,8 @@ defmodule CapturWeb.Router do
     resources "/games", GameController
     resources "/participants", ParticipantController
   end
+
+  forward "/graphql", Absinthe.Plug,
+    schema: CapturWeb.Schema
+
 end

@@ -40,7 +40,12 @@ defmodule Captur.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:poison, "~> 3.1.0"},
+      {:absinthe, "~> 1.4.6"},
+      {:absinthe_plug, "~> 1.4.2"},
+      {:absinthe_ecto, git: "https://github.com/absinthe-graphql/absinthe_ecto.git"},
+      {:faker, "~> 0.9"}
     ]
   end
 
