@@ -10,6 +10,7 @@ defmodule CapturWeb.Router do
     resources "/users", UserController
     resources "/games", GameController
     resources "/participants", ParticipantController
+    resources "/challenges", ChallengerController
   end
 
   forward "/graphql", Absinthe.Plug,

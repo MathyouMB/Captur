@@ -326,4 +326,196 @@ defmodule Captur.Games do
   def change_participant(%Participant{} = participant) do
     Participant.changeset(participant, %{})
   end
+
+  alias Captur.Games.Challenge
+
+  @doc """
+  Returns the list of challenges.
+
+  ## Examples
+
+      iex> list_challenges()
+      [%Challenge{}, ...]
+
+  """
+  def list_challenges do
+    Repo.all(Challenge)
+  end
+
+  @doc """
+  Gets a single challenge.
+
+  Raises `Ecto.NoResultsError` if the Challenge does not exist.
+
+  ## Examples
+
+      iex> get_challenge!(123)
+      %Challenge{}
+
+      iex> get_challenge!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_challenge!(id), do: Repo.get!(Challenge, id)
+
+  @doc """
+  Creates a challenge.
+
+  ## Examples
+
+      iex> create_challenge(%{field: value})
+      {:ok, %Challenge{}}
+
+      iex> create_challenge(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_challenge(attrs \\ %{}) do
+    %Challenge{}
+    |> Challenge.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a challenge.
+
+  ## Examples
+
+      iex> update_challenge(challenge, %{field: new_value})
+      {:ok, %Challenge{}}
+
+      iex> update_challenge(challenge, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_challenge(%Challenge{} = challenge, attrs) do
+    challenge
+    |> Challenge.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a challenge.
+
+  ## Examples
+
+      iex> delete_challenge(challenge)
+      {:ok, %Challenge{}}
+
+      iex> delete_challenge(challenge)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_challenge(%Challenge{} = challenge) do
+    Repo.delete(challenge)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking challenge changes.
+
+  ## Examples
+
+      iex> change_challenge(challenge)
+      %Ecto.Changeset{source: %Challenge{}}
+
+  """
+  def change_challenge(%Challenge{} = challenge) do
+    Challenge.changeset(challenge, %{})
+  end
+
+  alias Captur.Games.Reward
+
+  @doc """
+  Returns the list of rewards.
+
+  ## Examples
+
+      iex> list_rewards()
+      [%Reward{}, ...]
+
+  """
+  def list_rewards do
+    Repo.all(Reward)
+  end
+
+  @doc """
+  Gets a single reward.
+
+  Raises `Ecto.NoResultsError` if the Reward does not exist.
+
+  ## Examples
+
+      iex> get_reward!(123)
+      %Reward{}
+
+      iex> get_reward!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_reward!(id), do: Repo.get!(Reward, id)
+
+  @doc """
+  Creates a reward.
+
+  ## Examples
+
+      iex> create_reward(%{field: value})
+      {:ok, %Reward{}}
+
+      iex> create_reward(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_reward(attrs \\ %{}) do
+    %Reward{}
+    |> Reward.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a reward.
+
+  ## Examples
+
+      iex> update_reward(reward, %{field: new_value})
+      {:ok, %Reward{}}
+
+      iex> update_reward(reward, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_reward(%Reward{} = reward, attrs) do
+    reward
+    |> Reward.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a reward.
+
+  ## Examples
+
+      iex> delete_reward(reward)
+      {:ok, %Reward{}}
+
+      iex> delete_reward(reward)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_reward(%Reward{} = reward) do
+    Repo.delete(reward)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking reward changes.
+
+  ## Examples
+
+      iex> change_reward(reward)
+      %Ecto.Changeset{source: %Reward{}}
+
+  """
+  def change_reward(%Reward{} = reward) do
+    Reward.changeset(reward, %{})
+  end
 end
