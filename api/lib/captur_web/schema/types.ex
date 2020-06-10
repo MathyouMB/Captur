@@ -1,6 +1,7 @@
 defmodule CapturWeb.Schema.Types do
   use Absinthe.Schema.Notation
   use Absinthe.Ecto, repo: Captur.Repo
+  import_types Absinthe.Type.Custom
 
   object :user do
     field :id, :id
@@ -21,6 +22,9 @@ defmodule CapturWeb.Schema.Types do
     field :id, :id
     field :title, :string
     field :description, :string
+    field :start_date, :naive_datetime
+    field :end_date, :naive_datetime
+    field :hidden, :boolean
     field :owner, :user, resolve: assoc(:user)
     field :users, list_of(:user), resolve: assoc(:users)
     field :participants, list_of(:participant), resolve: assoc(:participants)
