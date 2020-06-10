@@ -7,6 +7,7 @@ defmodule Captur.Games.Participant do
   schema "participants" do
     belongs_to :game, Captur.Games.Game
     belongs_to :user, Captur.Games.User
+    has_many :rewards, Captur.Games.Reward
     timestamps()
   end
 

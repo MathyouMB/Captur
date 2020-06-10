@@ -2,7 +2,7 @@ defmodule Captur.Repo.Migrations.CreateChallenges do
   use Ecto.Migration
 
   def change do
-    create table(:challenges, primary_key: false) do
+    create table(:challenges) do
       add :title, :string
       add :description, :text
       add :body, :text
@@ -14,7 +14,7 @@ defmodule Captur.Repo.Migrations.CreateChallenges do
       add :start_date, :naive_datetime
       add :end_date, :naive_datetime
       add :hidden, :boolean, default: false, null: false
-      add :game_id, references(:games, on_delete: :nothing, type: :binary_id)
+      add :game_id, references(:games, on_delete: :nothing)
 
       timestamps()
     end

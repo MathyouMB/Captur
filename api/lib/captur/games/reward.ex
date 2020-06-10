@@ -5,6 +5,8 @@ defmodule Captur.Games.Reward do
 
   schema "rewards" do
     field :bonus_points, :integer
+    belongs_to :participant, Captur.Games.Participant
+    belongs_to :challenge, Captur.Games.Challenge
     timestamps()
   end
 

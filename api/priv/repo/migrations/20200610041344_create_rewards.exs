@@ -2,7 +2,7 @@ defmodule Captur.Repo.Migrations.CreateRewards do
   use Ecto.Migration
 
   def change do
-    create table(:rewards, primary_key: false) do
+    create table(:rewards) do
       add :bonus_points, :integer
       add :participant_id, references(:participants, on_delete: :nothing)
       add :challenge_id, references(:challenges, on_delete: :nothing)
