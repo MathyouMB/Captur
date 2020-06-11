@@ -2,6 +2,7 @@ defmodule CapturWeb.Router do
   use CapturWeb, :router
 
   pipeline :api do
+    plug CORSPlug, origin: "*"
     plug :accepts, ["json"]
   end
 
@@ -10,7 +11,8 @@ defmodule CapturWeb.Router do
     resources "/users", UserController
     resources "/games", GameController
     resources "/participants", ParticipantController
-    resources "/challenges", ChallengerController
+    resources "/challenges", ChallengeController
+    resources "/rewards", RewardController
   end
 
   forward "/graphql", Absinthe.Plug,

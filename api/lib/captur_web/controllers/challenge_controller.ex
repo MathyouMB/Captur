@@ -11,14 +11,14 @@ defmodule CapturWeb.ChallengeController do
     render(conn, "index.json", challenges: challenges)
   end
 
-  def create(conn, %{"challenge" => challenge_params}) do
-    with {:ok, %Challenge{} = challenge} <- Games.create_challenge(challenge_params) do
-      conn
-      |> put_status(:created)
-      |> put_resp_header("location", Routes.challenge_path(conn, :show, challenge))
-      |> render("show.json", challenge: challenge)
-    end
-  end
+  #def create(conn, %{"challenge" => challenge_params}) do
+  #  with {:ok, %Challenge{} = challenge} <- Games.create_challenge(challenge_params) do
+  #    conn
+  #    |> put_status(:created)
+  #    |> put_resp_header("location", Routes.challenge_path(conn, :show, challenge))
+  #    |> render("show.json", challenge: challenge)
+  #  end
+  #end
 
   def show(conn, %{"id" => id}) do
     challenge = Games.get_challenge!(id)
