@@ -1,6 +1,10 @@
 # Captur
+
+A fake platform for hosting challenge based contests such as capture the flag events. I built this api to further learn elixir, phoenix, and absinthe. 
+<br>
 <img src="./schema.png"></img>
-A platform for hosting challenge based contests such as capture the flag events.
+<br>
+
 
 To start your Phoenix server:
 
