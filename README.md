@@ -1,6 +1,13 @@
 # Captur
+<img src="./schema.png"></img>
+A platform for hosting challenge based contests such as capture the flag events.
 
-A fake platform for hosting challenge based contests such as capture the flag events. I built this api to further learn elixir and phoenix.
+To start your Phoenix server:
+
+  * Install dependencies with `mix deps.get`
+  * Create and migrate your database with `mix ecto.setup`
+  * Install Node.js dependencies with `cd assets && npm install`
+  * Start Phoenix endpoint with `mix phx.server`
 
 # Articles
 
